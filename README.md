@@ -1,2 +1,2 @@
 # 0.001-
-financial tracker
+my study planner
