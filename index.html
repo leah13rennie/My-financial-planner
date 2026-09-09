@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>StudyOS | AI Study Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+<!-- Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<!-- Charts -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+
+<body>
+
+
+<div class="app">
+
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+<h1>
+<i class="fa-solid fa-brain"></i>
+StudyOS
+</h1>
+
+
+<nav>
+
+<button class="active">
+<i class="fa-solid fa-house"></i>
+Dashboard
+</button>
+
+
+<button>
+<i class="fa-solid fa-book"></i>
+Study Planner
+</button>
+
+
+<button>
+<i class="fa-solid fa-chart-line"></i>
+Analytics
+</button>
+
+
+<button>
+<i class="fa-solid fa-calendar"></i>
+Calendar
+</button>
+
+
+<button>
+<i class="fa-solid fa-robot"></i>
+AI Assistant
+</button>
+
+
+</nav>
+
+
+<button id="themeBtn">
+🌙 Toggle Theme
+</button>
+
+
+</aside>
+
+
+
+
+<!-- MAIN -->
+
+<main>
+
+
+
+<header class="top">
+
+<div>
+
+<h2>
+Good morning, Leah 👋
+</h2>
+
+<p>
+Build your future one study session at a time.
+</p>
+
+</div>
+
+
+<div class="level">
+
+<span>
+Level
+</span>
+
+<h2 id="level">
+1
+</h2>
+
+</div>
+
+
+</header>
+
+
+
+
+
+<!-- STATS -->
+
+
+<section class="stats">
+
+
+<div class="card">
+
+<i class="fa-solid fa-fire"></i>
+
+<h3>
+Study Streak
+</h3>
+
+<h2 id="streak">
+0 Days
+</h2>
+
+</div>
+
+
+
+<div class="card">
+
+<i class="fa-solid fa-clock"></i>
+
+<h3>
+Focus Time
+</h3>
+
+<h2 id="focusTime">
+0 min
+</h2>
+
+</div>
+
+
+
+
+<div class="card">
+
+<i class="fa-solid fa-star"></i>
+
+<h3>
+XP Points
+</h3>
+
+<h2 id="xp">
+0 XP
+</h2>
+
+</div>
+
+
+
+
+<div class="card">
+
+<i class="fa-solid fa-check"></i>
+
+<h3>
+Completed
+</h3>
+
+<h2 id="completed">
+0
+</h2>
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+<!-- TASK SECTION -->
+
+
+<section class="panel">
+
+
+<h2>
+<i class="fa-solid fa-list-check"></i>
+Today's Tasks
+</h2>
+
+
+
+<div class="inputBox">
+
+<input 
+id="taskInput"
+placeholder="Add a study task..."
+>
+
+
+<button onclick="addTask()">
+
+Add
+
+</button>
+
+
+</div>
+
+
+
+<ul id="taskList">
+
+</ul>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- POMODORO -->
+
+
+<section class="panel timer">
+
+
+<h2>
+Pomodoro Focus
+</h2>
+
+
+<div id="timer">
+
+25:00
+
+</div>
+
+
+
+<button onclick="startTimer()">
+
+Start
+
+</button>
+
+
+
+<button onclick="pauseTimer()">
+
+Pause
+
+</button>
+
+
+
+<button onclick="resetTimer()">
+
+Reset
+
+</button>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- GOALS -->
+
+
+<section class="panel">
+
+
+<h2>
+Daily Goal
+</h2>
+
+
+<input 
+id="goalInput"
+placeholder="Example: Study Biology 2 hours"
+>
+
+
+<button onclick="saveGoal()">
+Save Goal
+</button>
+
+
+<p id="goal">
+
+No goal set
+
+</p>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- NOTES -->
+
+
+<section class="panel">
+
+
+<h2>
+Quick Notes
+</h2>
+
+
+<textarea 
+id="notes"
+placeholder="Write your notes here..."
+></textarea>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ANALYTICS -->
+
+
+<section class="panel">
+
+
+<h2>
+Study Analytics
+</h2>
+
+
+
+<canvas id="studyChart">
+
+</canvas>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- AI ASSISTANT -->
+
+
+<section class="panel ai">
+
+
+<h2>
+
+<i class="fa-solid fa-robot"></i>
+
+AI Study Assistant
+
+</h2>
+
+
+<p>
+
+Ask StudyOS for help planning your learning.
+
+</p>
+
+
+
+<div class="inputBox">
+
+
+<input 
+id="aiInput"
+placeholder="Example: Make me a biology study plan"
+>
+
+
+<button onclick="askAI()">
+
+Ask
+
+</button>
+
+
+</div>
+
+
+
+<div id="aiResponse">
+
+</div>
+
+
+</section>
+
+
+
+
+
+</main>
+
+
+</div>
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
